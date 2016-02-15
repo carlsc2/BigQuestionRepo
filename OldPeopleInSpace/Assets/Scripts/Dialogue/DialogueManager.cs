@@ -45,6 +45,10 @@ public class DialogueManager : Singleton<DialogueManager> {
 			int tmp = i + 1; // need to capture value of variable before passing to delegate
 			responsebutton.GetComponent<Button>().onClick.AddListener(() => { animator.SetInteger("optionselect", tmp); });
 		}
+
+		GameObject.FindGameObjectWithTag("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
+		Cursor.visible = true;
+		Cursor.lockState = CursorLockMode.None;
 	}
 
 	public void endDialogue() {
@@ -55,6 +59,8 @@ public class DialogueManager : Singleton<DialogueManager> {
 		buttons.RemoveAll((o) => o == null);
 		dialogueTextBox.text = "";
 		dialogueUIObject.SetActive(false);
+
+		GameObject.FindGameObjectWithTag("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
 
 	}
 
