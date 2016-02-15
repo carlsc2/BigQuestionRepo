@@ -114,7 +114,7 @@ Animator:
   m_GameObject: {fileID: 54164374}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 1d7d137bf075c6648a657d20b3f23df9, type: 2}
+  m_Controller: {fileID: 9100000, guid: 011b0e0224a3fad4c84f02655b5ef463, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -191,6 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de33ed3ecb523041bb4142a81166df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  npc_name: old man
 --- !u!4 &120032600 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 93e86b57e56570d46814839867bf9a52, type: 2}
@@ -291,6 +292,10 @@ Transform:
 Transform:
   m_PrefabParentObject: {fileID: 400002, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
   m_PrefabInternal: {fileID: 847276420}
+--- !u!1 &687265512 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 180218, guid: 7aeca5f7f241f5e47a7479ef879271fd, type: 2}
+  m_PrefabInternal: {fileID: 2082643932}
 --- !u!1001 &847276420
 Prefab:
   m_ObjectHideFlags: 0
@@ -329,6 +334,10 @@ Prefab:
     - target: {fileID: 400000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e9e851c0e142814dac026a256ba2ac0, type: 2}
@@ -722,7 +731,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1
+  m_Radius: 2
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1555812120
 MonoBehaviour:
@@ -735,6 +744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 601956922f0779b479452cb1aaff84ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiprompt: {fileID: 687265512}
 --- !u!4 &1907772619 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 93e86b57e56570d46814839867bf9a52, type: 2}
@@ -816,6 +826,26 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22408134, guid: 7aeca5f7f241f5e47a7479ef879271fd, type: 2}
       propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 22489092, guid: 7aeca5f7f241f5e47a7479ef879271fd, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22489092, guid: 7aeca5f7f241f5e47a7479ef879271fd, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22432192, guid: 7aeca5f7f241f5e47a7479ef879271fd, type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 22432192, guid: 7aeca5f7f241f5e47a7479ef879271fd, type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 120786, guid: 7aeca5f7f241f5e47a7479ef879271fd, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
