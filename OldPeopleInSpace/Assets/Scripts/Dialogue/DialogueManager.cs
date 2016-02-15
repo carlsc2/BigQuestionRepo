@@ -36,8 +36,11 @@ public class DialogueManager : Singleton<DialogueManager> {
 		//set the new text
 		dialogueTextBox.text = state.dialogueText;
 
-		//generate responses
+		//reset content box size
+		responseBox.sizeDelta = Vector2.zero;
 
+
+		//generate responses
 		float yoffset = 0;
 		for (int i=0; i<state.responses.Length; i++) {
 			//set dialogue text

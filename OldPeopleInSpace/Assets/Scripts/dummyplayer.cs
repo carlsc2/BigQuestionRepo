@@ -18,6 +18,7 @@ public class dummyplayer : MonoBehaviour {
 			//transform.root.LookAt(target);
 			
 			transform.root.rotation = Quaternion.Slerp(transform.root.rotation, targetRotation, Time.deltaTime * 2f);
+			transform.parent.localRotation = Quaternion.Slerp(transform.parent.localRotation, Quaternion.identity, Time.deltaTime * 2f);
 			if (Quaternion.Angle(transform.root.rotation, targetRotation) < 2) {
 				GameObject.FindGameObjectWithTag("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().reset_camera();
 				looking = false;
@@ -39,6 +40,8 @@ public class dummyplayer : MonoBehaviour {
 			}
 			if (Input.GetKeyDown(KeyCode.Escape)) {
 				col.BroadcastMessage("Interrupt");
+				looking = false;
+				GameObject.FindGameObjectWithTag("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().reset_camera();
 			}
 		}
 	}
