@@ -11,14 +11,17 @@ public class DialogueManager : Singleton<DialogueManager> {
 	public GameObject dialogueUIObject;
 	public RectTransform responseBox;
 	public GameObject responseButtonPrefab;
+	public Text namebox;
 
-	private float buttonheight;
 	private List<GameObject> buttons;
 
 	// Use this for initialization
 	void Start() {
 		buttons = new List<GameObject>();
-		buttonheight = responseButtonPrefab.GetComponent<RectTransform>().rect.height;
+	}
+
+	public void set_name(string name) {
+		namebox.text = name;
 	}
 
 
@@ -34,16 +37,29 @@ public class DialogueManager : Singleton<DialogueManager> {
 		dialogueTextBox.text = state.dialogueText;
 
 		//generate responses
+
+		float yoffset = 0;
 		for (int i=0; i<state.responses.Length; i++) {
+			//set dialogue text
 			string response = state.responses[i];
 			GameObject responsebutton = Instantiate(responseButtonPrefab) as GameObject;
 			buttons.Add(responsebutton);
-			responsebutton.GetComponentInChildren<Text>().text = response;
+			Text rtext = responsebutton.GetComponentInChildren<Text>();
+			rtext.text = response;
+			//resize buttons to fit response
 			RectTransform rt = responsebutton.GetComponent<RectTransform>();
 			rt.SetParent(responseBox, false);
-			rt.localPosition = new Vector3(0, -(buttonheight * i) - buttonheight/2, 0);
-			int tmp = i + 1; // need to capture value of variable before passing to delegate
-			responsebutton.GetComponent<Button>().onClick.AddListener(() => { animator.SetInteger("optionselect", tmp); });
+			Vector2 tmp = rt.sizeDelta;
+			tmp.y = rtext.preferredHeight + 10;//add 10 for padding
+			rt.sizeDelta = tmp;
+			rt.localPosition = new Vector3(0, -(tmp.y / 2) - yoffset, 0);
+			yoffset += tmp.y;
+			//rescale the content box for the scrollbars
+			tmp = responseBox.sizeDelta;
+			tmp.y = yoffset;
+			responseBox.sizeDelta = tmp;
+			int tmp2 = i + 1; // need to capture value of variable before passing to delegate
+			responsebutton.GetComponent<Button>().onClick.AddListener(() => { animator.SetInteger("optionselect", tmp2); });
 		}
 
 		GameObject.FindGameObjectWithTag("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;

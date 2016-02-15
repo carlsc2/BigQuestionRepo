@@ -7,6 +7,8 @@ public class DialogueControl : MonoBehaviour {
 
 	//manage the dialogue of an NPC
 
+	public string npc_name = "Default";
+
 	private Animator anim;
 
 	void Awake () {
@@ -14,6 +16,7 @@ public class DialogueControl : MonoBehaviour {
 	}
 	
 	void Interact() {
+		DialogueManager.Instance.set_name(npc_name);
 		anim.SetTrigger("speak");
 	}
 

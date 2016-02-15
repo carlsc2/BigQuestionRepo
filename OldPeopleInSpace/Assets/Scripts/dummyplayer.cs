@@ -37,7 +37,7 @@ public class dummyplayer : MonoBehaviour {
 				looking = true;
 
 			}
-			if (Input.GetKeyDown(KeyCode.F)) {
+			if (Input.GetKeyDown(KeyCode.Escape)) {
 				col.BroadcastMessage("Interrupt");
 			}
 		}
