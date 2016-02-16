@@ -115,6 +115,8 @@ GameObject:
   - 4: {fileID: 441504}
   - 114: {fileID: 11442356}
   - 65: {fileID: 6573588}
+  - 95: {fileID: 9542786}
+  - 114: {fileID: 11451754}
   m_Layer: 0
   m_Name: Elevator
   m_TagString: Untagged
@@ -253,7 +255,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 127274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5.396, y: 2.326, z: 64.5}
+  m_LocalPosition: {x: 5.396, y: 2.326, z: 15.9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 456190}
@@ -782,6 +784,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.000029, y: 6.0000677, z: 1.0000086}
   m_Center: {x: 0.0000121593475, y: 2.9997969, z: 0.4999878}
+--- !u!95 &9542786
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127274}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: be61dd31befcf4d48be37185f9b172c1, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!108 &10861326
 Light:
   m_ObjectHideFlags: 1
@@ -826,6 +845,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a84c5e3aaea1f884d8847207897bb601, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &11451754
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 127274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9de33ed3ecb523041bb4142a81166df7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  npc_name: Elevator
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
