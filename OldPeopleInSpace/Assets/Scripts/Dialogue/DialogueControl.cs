@@ -17,11 +17,13 @@ public class DialogueControl : MonoBehaviour {
 	
 	void Interact() {
 		DialogueManager.Instance.set_name(npc_name);
-		anim.SetTrigger("speak");
+		anim.SetTrigger("stop");
+		anim.SetBool("speak",true);
+
 	}
 
-	void Interrupt() {
-		anim.SetTrigger("stop");
-	}
+	//void Interrupt() {
+		//anim.SetTrigger("stop");
+	//}
 
 }
