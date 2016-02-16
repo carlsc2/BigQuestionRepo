@@ -17,6 +17,10 @@ public class DialogueManager : Singleton<DialogueManager> {
 
 	private List<GameObject> buttons;
 
+	void Awake() {
+		DontDestroyOnLoad(gameObject);
+	}
+
 	// Use this for initialization
 	void Start() {
 		buttons = new List<GameObject>();
@@ -74,7 +78,7 @@ public class DialogueManager : Singleton<DialogueManager> {
 	}
 
 	public void endDialogue(Animator animator) {
-		if (animator == current) {
+		if (animator && animator == current) {
 			//destroy all previously created buttons
 			foreach (GameObject g in buttons) {
 				Destroy(g);

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class dummyplayer : MonoBehaviour {
+public class Player : MonoBehaviour {
 
 	public GameObject uiprompt;
 	private Quaternion targetRotation;
@@ -17,9 +17,10 @@ public class dummyplayer : MonoBehaviour {
 		if (looking) {
 			//transform.root.LookAt(target);
 			
-			transform.root.rotation = Quaternion.Slerp(transform.root.rotation, targetRotation, Time.deltaTime * 2f);
+			Quaternion newrot = Quaternion.Slerp(transform.root.rotation, targetRotation, Time.deltaTime * 2f);
+			transform.root.rotation = Quaternion.Euler(new Vector3(0,newrot.eulerAngles.y,0));
 			transform.parent.localRotation = Quaternion.Slerp(transform.parent.localRotation, Quaternion.identity, Time.deltaTime * 2f);
-			if (Quaternion.Angle(transform.root.rotation, targetRotation) < 2) {
+			if (Quaternion.Angle(transform.root.rotation, targetRotation) < 2 && Quaternion.Angle(transform.parent.localRotation, Quaternion.identity) < 2) {
 				GameObject.FindGameObjectWithTag("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().reset_camera();
 				looking = false;
 			}
@@ -31,7 +32,7 @@ public class dummyplayer : MonoBehaviour {
 	void OnTriggerStay(Collider col) {
 		if (col.transform.root.GetComponentInChildren<DialogueControl>()) {
 			if (Input.GetKeyDown(KeyCode.E)) {
-				col.BroadcastMessage("Interact");
+				col.transform.root.BroadcastMessage("Interact");
 				uiprompt.SetActive(false);
 
 				targetRotation = Quaternion.LookRotation(col.transform.position - transform.root.position);
@@ -39,7 +40,7 @@ public class dummyplayer : MonoBehaviour {
 
 			}
 			if (Input.GetKeyDown(KeyCode.Escape)) {
-				col.BroadcastMessage("Interrupt");
+				col.transform.root.BroadcastMessage("Interrupt");
 				looking = false;
 				GameObject.FindGameObjectWithTag("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().reset_camera();
 			}
@@ -54,7 +55,7 @@ public class dummyplayer : MonoBehaviour {
 
 	void OnTriggerExit(Collider col) {
 		if (col.transform.root.GetComponentInChildren<DialogueControl>()) {
-			col.BroadcastMessage("Interrupt");
+			//col.BroadcastMessage("Interrupt");
 			uiprompt.SetActive(false);
 		}
 	}
