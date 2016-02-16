@@ -27,6 +27,7 @@ public class MonologueControl : MonoBehaviour {
 
 	public void Stop() {
 		anim.SetTrigger("stop");
+		anim.ResetTrigger("next");
 	}
 
 	public void Interrupt() {
