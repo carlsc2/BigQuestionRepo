@@ -1,26 +1,19 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DialogueState : StateMachineBehaviour {
+public class MonologueState : StateMachineBehaviour {
 
-	public bool idle_state = false;
-
-	public string dialogueText;
-	public string[] responses;
+	private MonologueControl self;
+	public string monologueText;
 
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 		//called on the first frame of the state being played
+		self = animator.GetComponent<MonologueControl>();
+		if (!monologueText.Equals("")) {
+			self.monologuebox.SetActive(true);
+			self.get_textbox().text = monologueText;
+		}
 
-		if (idle_state) {
-			//hide UI in idle state
-			DialogueManager.Instance.endDialogue(animator);
-		}
-		else {
-			animator.SetBool("speak", false);
-			//display options on UI
-			DialogueManager.Instance.setDialogue(this, animator);
-		}
-		
 	}
 
 	override public void OnStateUpdate(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
@@ -29,14 +22,28 @@ public class DialogueState : StateMachineBehaviour {
 	}
 
 	override public void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
-
 		//called on the last frame of a transition to another state.
 
-		//reset the options
-		animator.SetInteger("optionselect", 0);
+		//trigger other to speak
+		self.monologuebox.SetActive(false);
+
+
+		if (animator.GetBool("speak")) {
+			self.Interrupt();
+		}
+		else {
+			if (self.other) self.other.Speak();
+			else self.Speak();
+		}
+		
+		
+
+		
 	}
 
-	//override public void OnStateMachineEnter(Animator animator, int stateMachinePathHash) {
-		//animator.SetBool("speak", false);
+	//override public void OnStateMachineExit(Animator animator, int stateMachinePathHash) {
+		//self.Interrupt();	
 	//}
+
+	
 }

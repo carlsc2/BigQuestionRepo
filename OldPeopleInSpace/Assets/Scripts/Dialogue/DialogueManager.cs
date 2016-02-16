@@ -13,6 +13,8 @@ public class DialogueManager : Singleton<DialogueManager> {
 	public GameObject responseButtonPrefab;
 	public Text namebox;
 
+	private Animator current;
+
 	private List<GameObject> buttons;
 
 	// Use this for initialization
@@ -26,6 +28,7 @@ public class DialogueManager : Singleton<DialogueManager> {
 
 
 	public void setDialogue(DialogueState state, Animator animator) {
+		current = animator;
 		dialogueUIObject.SetActive(true);
 		//destroy all previously created buttons
 		foreach (GameObject g in buttons) {
@@ -70,16 +73,18 @@ public class DialogueManager : Singleton<DialogueManager> {
 		Cursor.lockState = CursorLockMode.None;
 	}
 
-	public void endDialogue() {
-		//destroy all previously created buttons
-		foreach (GameObject g in buttons) {
-			Destroy(g);
-		}
-		buttons.RemoveAll((o) => o == null);
-		dialogueTextBox.text = "";
-		dialogueUIObject.SetActive(false);
+	public void endDialogue(Animator animator) {
+		if (animator == current) {
+			//destroy all previously created buttons
+			foreach (GameObject g in buttons) {
+				Destroy(g);
+			}
+			buttons.RemoveAll((o) => o == null);
+			dialogueTextBox.text = "";
+			dialogueUIObject.SetActive(false);
 
-		GameObject.FindGameObjectWithTag("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
+			GameObject.FindGameObjectWithTag("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
+		}
 
 	}
 
