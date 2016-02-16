@@ -329,7 +329,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 474528, guid: 2cf492f9062763942a7c18089e74b1ff, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 4.420785
+      value: 5.64
       objectReference: {fileID: 0}
     - target: {fileID: 474528, guid: 2cf492f9062763942a7c18089e74b1ff, type: 2}
       propertyPath: m_LocalPosition.y
@@ -337,7 +337,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 474528, guid: 2cf492f9062763942a7c18089e74b1ff, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 9.645288
+      value: 5.789
       objectReference: {fileID: 0}
     - target: {fileID: 474528, guid: 2cf492f9062763942a7c18089e74b1ff, type: 2}
       propertyPath: m_LocalRotation.x
@@ -362,23 +362,6 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2cf492f9062763942a7c18089e74b1ff, type: 2}
   m_IsPrefabParent: 0
---- !u!1 &293471803 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 128800, guid: 2cf492f9062763942a7c18089e74b1ff, type: 2}
-  m_PrefabInternal: {fileID: 293471802}
---- !u!136 &293471804
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 293471803}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 1.09
-  m_Height: 3.17
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.38, z: 0}
 --- !u!1001 &456145267
 Prefab:
   m_ObjectHideFlags: 0
@@ -914,6 +897,10 @@ Prefab:
     - target: {fileID: 190328, guid: 57f6bfa677607514b9abdfed81ba5ee7, type: 2}
       propertyPath: m_Name
       value: Bed (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 143986, guid: 57f6bfa677607514b9abdfed81ba5ee7, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 57f6bfa677607514b9abdfed81ba5ee7, type: 2}
