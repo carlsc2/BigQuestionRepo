@@ -17,9 +17,9 @@ public class DialogueManager : Singleton<DialogueManager> {
 
 	private List<GameObject> buttons;
 
-	void Awake() {
+	/*void Awake() {
 		DontDestroyOnLoad(gameObject);
-	}
+	}*/
 
 	// Use this for initialization
 	void Start() {
@@ -28,6 +28,15 @@ public class DialogueManager : Singleton<DialogueManager> {
 
 	public void set_name(string name) {
 		namebox.text = name;
+	}
+
+	void Update() {
+		if (Input.GetKeyDown(KeyCode.P)) {
+			Elevator.reset_game();
+		}
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			Application.Quit();
+		}
 	}
 
 

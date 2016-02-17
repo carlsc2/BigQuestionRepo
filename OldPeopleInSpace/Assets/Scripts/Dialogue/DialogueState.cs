@@ -13,7 +13,10 @@ public class DialogueState : StateMachineBehaviour {
 
 		if (idle_state) {
 			//hide UI in idle state
-			DialogueManager.Instance.endDialogue(animator);
+			if (DialogueManager.Instance) {
+				DialogueManager.Instance.endDialogue(animator);
+			}
+			
 		}
 		else {
 			animator.SetBool("speak", false);

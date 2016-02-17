@@ -521,7 +521,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9de33ed3ecb523041bb4142a81166df7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npc_name: old man
+  npc_name: Mr. Oldman
 --- !u!114 &11416594
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -870,7 +870,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: npc_name
+      value: Mr. Oldman
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 135750}

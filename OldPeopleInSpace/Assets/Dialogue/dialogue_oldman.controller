@@ -13,31 +13,31 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: next
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: speak
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: stop
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: globalstate
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -94,6 +94,17 @@ MonoBehaviour:
   dialogueText: I would like to eat one last meal.
   responses:
   - Let's go.
+--- !u!114 &11419024
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6245000e80684df4ead1de95150e0278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11420142
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -108,6 +119,17 @@ MonoBehaviour:
   idle_state: 1
   dialogueText: 
   responses: []
+--- !u!114 &11424122
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6245000e80684df4ead1de95150e0278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11427334
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -122,7 +144,7 @@ MonoBehaviour:
   idle_state: 0
   dialogueText: Yes?
   responses:
-  - Is there anything you want to do first?
+  - Is there anything you want to do before you go on the end journey?
   - Follow me.
   - Can you tell me about yourself?
   - Nevermind.
@@ -234,6 +256,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   monologueText: I'm going on the end journey, I've come to say goodbye.
   keep_going: 1
+--- !u!114 &11460552
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6245000e80684df4ead1de95150e0278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11462928
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -259,7 +292,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monologueText: 
-  keep_going: 1
+  keep_going: 0
+--- !u!114 &11469166
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6245000e80684df4ead1de95150e0278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11469336
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -272,6 +316,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   new_state_index: 3
+--- !u!114 &11472914
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6245000e80684df4ead1de95150e0278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &11482966
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -332,6 +387,17 @@ MonoBehaviour:
   dialogueText: Hello.
   responses:
   - Hi, I'm here to guide you on your end journey.
+--- !u!114 &11495092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6245000e80684df4ead1de95150e0278, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1101 &110108622
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1065,7 +1131,7 @@ AnimatorStateTransition:
   m_TransitionDuration: 0.1
   m_TransitionOffset: 0
   m_ExitTime: 0.9
-  m_HasExitTime: 1
+  m_HasExitTime: 0
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
@@ -1136,7 +1202,7 @@ AnimatorStateTransition:
   serializedVersion: 3
   m_TransitionDuration: 0.1
   m_TransitionOffset: 0
-  m_ExitTime: 0.9
+  m_ExitTime: 2
   m_HasExitTime: 1
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
@@ -1317,6 +1383,7 @@ AnimatorState:
   - {fileID: 110169912}
   m_StateMachineBehaviours:
   - {fileID: 11440850}
+  - {fileID: 11472914}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -1342,6 +1409,7 @@ AnimatorState:
   - {fileID: 110191380}
   m_StateMachineBehaviours:
   - {fileID: 11408448}
+  - {fileID: 11460552}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -1367,6 +1435,7 @@ AnimatorState:
   - {fileID: 110179024}
   m_StateMachineBehaviours:
   - {fileID: 11439812}
+  - {fileID: 11495092}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -1619,6 +1688,7 @@ AnimatorState:
   - {fileID: 110137142}
   m_StateMachineBehaviours:
   - {fileID: 11406526}
+  - {fileID: 11469166}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -1644,6 +1714,7 @@ AnimatorState:
   - {fileID: 110184528}
   m_StateMachineBehaviours:
   - {fileID: 11451008}
+  - {fileID: 11419024}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1
@@ -1694,6 +1765,7 @@ AnimatorState:
   - {fileID: 110156666}
   m_StateMachineBehaviours:
   - {fileID: 11487790}
+  - {fileID: 11424122}
   m_Position: {x: 50, y: 50, z: 0}
   m_IKOnFeet: 0
   m_WriteDefaultValues: 1

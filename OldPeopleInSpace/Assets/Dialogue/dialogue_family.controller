@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monologueText: 
-  keep_going: 1
+  keep_going: 0
 --- !u!1101 &110108622
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -633,12 +633,12 @@ AnimatorStateMachine:
   m_EntryTransitions: []
   m_StateMachineTransitions:
     data:
-      first: {fileID: 110718936}
-      second: []
-    data:
       first: {fileID: 110778816}
       second:
       - {fileID: 110923760}
+    data:
+      first: {fileID: 110718936}
+      second: []
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 336, y: 0, z: 0}
   m_EntryPosition: {x: 72, y: -24, z: 0}

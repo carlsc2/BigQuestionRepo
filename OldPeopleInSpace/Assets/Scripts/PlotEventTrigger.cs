@@ -32,6 +32,9 @@ public class PlotEventTrigger : MonoBehaviour {
 		if (started) {
 			//get in position
 			if (!in_position) {
+				print("navigating");
+				
+				agent.ResetPath();
 				agent.SetDestination(waypoint.position);
 				if ((agent.transform.position - waypoint.position).magnitude < 1) {
 					//reached target, begin bowing
@@ -54,6 +57,7 @@ public class PlotEventTrigger : MonoBehaviour {
 								follower.stay_put = false;
 								//set global state
 								follower.transform.Find("dialogue").GetComponent<Animator>().SetInteger("globalstate", 2);
+								DialogueControl.globalstate = 2;
 							}
 
 						}

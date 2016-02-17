@@ -20,9 +20,13 @@ public class PlotEventTrigger2 : MonoBehaviour {
 
 	private bool done = false;
 
+	//void Awake() {
+	//	DialogueControl.globalstate = 2;
+	//}
+
 
 	void OnTriggerEnter(Collider col) {
-		if (!started) {
+		if (DialogueControl.globalstate == 2 && !started) {
 			if (col.transform.root.tag == "oldman") {
 				print("PLOT EVENT TRIGGER");
 				follower = col.transform.root.GetComponent<Follower>();
