@@ -7,12 +7,15 @@ public class DialogueControl : MonoBehaviour {
 
 	//manage the dialogue of an NPC
 
+	public static int globalstate = 0;
+
 	public string npc_name = "Default";
 
 	private Animator anim;
 
 	void Awake () {
 		anim = GetComponent<Animator>();
+		anim.SetInteger("globalstate", globalstate);
 	}
 	
 	void Interact() {

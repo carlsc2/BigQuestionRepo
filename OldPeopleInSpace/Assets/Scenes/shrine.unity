@@ -230,6 +230,10 @@ Prefab:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 171650, guid: 7aeca5f7f241f5e47a7479ef879271fd, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7aeca5f7f241f5e47a7479ef879271fd, type: 2}
   m_IsPrefabParent: 0
@@ -878,6 +882,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waypoint: {fileID: 1553615661}
   bowtime: 5
+  numbows: 3
 --- !u!65 &714762039
 BoxCollider:
   m_ObjectHideFlags: 0
