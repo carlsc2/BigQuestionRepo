@@ -32,7 +32,13 @@ public class DialogueManager : Singleton<DialogueManager> {
 
 
 	public void setDialogue(DialogueState state, Animator animator) {
-		current = animator;
+		if (current == null) {
+			current = animator;
+		}
+		else {
+			if (animator != current) return;
+		}
+		
 		dialogueUIObject.SetActive(true);
 		//destroy all previously created buttons
 		foreach (GameObject g in buttons) {
@@ -78,7 +84,7 @@ public class DialogueManager : Singleton<DialogueManager> {
 	}
 
 	public void endDialogue(Animator animator) {
-		if (animator && animator == current) {
+		if (animator != null && animator == current) {
 			//destroy all previously created buttons
 			foreach (GameObject g in buttons) {
 				Destroy(g);
@@ -88,6 +94,7 @@ public class DialogueManager : Singleton<DialogueManager> {
 			dialogueUIObject.SetActive(false);
 
 			GameObject.FindGameObjectWithTag("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
+			current = null;
 		}
 
 	}

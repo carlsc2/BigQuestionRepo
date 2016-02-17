@@ -13,19 +13,19 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: speak
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: stop
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
@@ -79,7 +79,7 @@ MonoBehaviour:
   idle_state: 0
   dialogueText: Hello. Where would you like to go?
   responses:
-  - Temple
+  - Shrine
   - Living Quarters
   - Mess Hall
   - Hospital
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed0e40bc8625f04b85dc5d8368d835c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  choice: 
+  choice: shrine
 --- !u!114 &11496656
 MonoBehaviour:
   m_ObjectHideFlags: 1

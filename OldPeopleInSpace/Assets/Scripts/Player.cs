@@ -17,13 +17,15 @@ public class Player : MonoBehaviour {
 		if (looking) {
 			//transform.root.LookAt(target);
 			
-			Quaternion newrot = Quaternion.Slerp(transform.root.rotation, targetRotation, Time.deltaTime * 2f);
+
+			//this is way too broken
+			/*Quaternion newrot = Quaternion.Slerp(transform.root.rotation, targetRotation, Time.deltaTime * 2f);
 			transform.root.rotation = Quaternion.Euler(new Vector3(0,newrot.eulerAngles.y,0));
 			transform.parent.localRotation = Quaternion.Slerp(transform.parent.localRotation, Quaternion.identity, Time.deltaTime * 2f);
 			if (Quaternion.Angle(transform.root.rotation, targetRotation) < 2 && Quaternion.Angle(transform.parent.localRotation, Quaternion.identity) < 2) {
 				GameObject.FindGameObjectWithTag("Player").GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().reset_camera();
 				looking = false;
-			}
+			}*/
 
 		}
 		
