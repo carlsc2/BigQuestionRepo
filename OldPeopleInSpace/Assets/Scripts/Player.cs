@@ -32,7 +32,7 @@ public class Player : MonoBehaviour {
 	}
 
 	void OnTriggerStay(Collider col) {
-		if (col.transform.root.GetComponentInChildren<DialogueControl>()) {
+		if (col.transform.root.GetComponentInChildren<DialogueControl>() || col.transform.root.GetComponentInChildren<killbutton>()) {
 			if (Input.GetKeyDown(KeyCode.E)) {
 				col.transform.root.BroadcastMessage("Interact");
 				uiprompt.SetActive(false);

@@ -9,6 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 477260}
   - 136: {fileID: 13644758}
+  - 95: {fileID: 9581076}
   m_Layer: 0
   m_Name: DeathChamber
   m_TagString: Untagged
@@ -26,6 +27,7 @@ GameObject:
   - 4: {fileID: 459856}
   - 33: {fileID: 3345768}
   - 23: {fileID: 2384358}
+  - 64: {fileID: 6442940}
   m_Layer: 0
   m_Name: ChamberMain
   m_TagString: Untagged
@@ -43,12 +45,13 @@ GameObject:
   - 4: {fileID: 446850}
   - 33: {fileID: 3351078}
   - 23: {fileID: 2319324}
+  - 64: {fileID: 6439292}
   m_Layer: 0
   m_Name: ChamberDoor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &136798
 GameObject:
@@ -65,7 +68,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
 --- !u!1 &146686
 GameObject:
@@ -124,7 +127,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 169264}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.104151726, y: 3.5099993, z: -0.07001114}
+  m_LocalPosition: {x: -0.104151726, y: 3.5099993, z: -0.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 477260}
@@ -197,7 +200,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112528}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 11.784191, y: 10.300001, z: -37.22999}
+  m_LocalPosition: {x: 11.784191, y: 10.300001, z: -41.85}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 454222}
@@ -372,6 +375,47 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 136798}
   m_Mesh: {fileID: 4300004, guid: d5d7db38b4f37824e80e92fdcf2da918, type: 3}
+--- !u!64 &6439292
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 128956}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300006, guid: d5d7db38b4f37824e80e92fdcf2da918, type: 3}
+--- !u!64 &6442940
+MeshCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 121308}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Convex: 0
+  m_Mesh: {fileID: 4300008, guid: d5d7db38b4f37824e80e92fdcf2da918, type: 3}
+--- !u!95 &9581076
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112528}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 5726b025a5c70ea4bb578fd5be1682f9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!108 &10815978
 Light:
   m_ObjectHideFlags: 1
@@ -413,7 +457,7 @@ CapsuleCollider:
   m_GameObject: {fileID: 112528}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   m_Radius: 1.49
   m_Height: 5.35
   m_Direction: 1

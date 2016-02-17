@@ -8,8 +8,7 @@ public class DissolveOldMan : MonoBehaviour {
 	public float dissolvetime = 2f;
 
 
-	// Use this for initialization
-	void Start () {
+	public void riperoni() {
 		headmat = head.material;
 		bodymat = body.material;
 		StartCoroutine(dissolve());
