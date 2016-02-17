@@ -5,6 +5,7 @@ public class MonologueState : StateMachineBehaviour {
 
 	private MonologueControl self;
 	public string monologueText;
+	public bool keep_going = true;
 
 	override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex) {
 		//called on the first frame of the state being played
@@ -32,8 +33,11 @@ public class MonologueState : StateMachineBehaviour {
 			self.Interrupt();
 		}
 		else {
-			if (self.other) self.other.Speak();
-			else self.Speak();
+			if (keep_going) {
+				if (self.other) self.other.Speak();
+				else self.Speak();
+			}
+			
 		}
 		
 		
