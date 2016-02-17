@@ -11,6 +11,7 @@ public class GlobalDialogueStateChange : StateMachineBehaviour {
 
 		//set global state index
 		animator.SetInteger("globalstate", new_state_index);
+		DialogueControl.globalstate = new_state_index;
 	}
 
 }
